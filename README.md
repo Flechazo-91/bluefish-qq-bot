@@ -167,6 +167,25 @@ flowchart TD
 
 ---
 
+## 你需要准备什么
+
+> 完整清单（含每个凭证怎么拿、填在哪、有效期）：**[docs/SETUP.md](docs/SETUP.md)**
+
+| # | 需要提供 | 必填？ | 怎么拿 | 填在哪 |
+|---|---|---|---|---|
+| 1 | **QQ 小号**（+ 手机扫码） | ✅ 必须 | 注册一个新号，别用主号 | 控制台「② 账号与认证」 |
+| 2 | **DeepSeek API Key** | ✅ 必须 | [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) 创建，复制 `sk-...` | 同上 |
+| 3 | **网易云 Cookie** | ⬜ 点歌/唱歌才要 | 浏览器登录 music.163.com → F12 → Cookies → 复制 `MUSIC_U`、`__csrf` | 同上 |
+| 4 | **语音模型**（GPT-SoVITS + Seed-VC，13 GB） | ⬜ 语音/唱歌才要 | 放 `Models/GPT-SoVITS/`、`Models/seed-vc/` | 目录约定，见 SETUP.md |
+| 5 | **NVIDIA 显卡**（6 GB+） | ⬜ 语音/唱歌才要 | 没有则退化为纯文字 | — |
+| 6 | **抖音账号**（扫码） | ⬜ 抖音自动化才要 | 自带 Edge 弹出二维码，**用抖音 App 扫** | 首次运行时扫码 |
+| 7 | **目标 QQ / 群号** | ⬜ 提醒/课表才要 | 填收件人与群 | `timetable.json`、`checkin-remind.mjs` |
+| 8 | **管理员 QQ** | ⬜ 用 `/` 命令才要 | 你自己或信任的人 | `cmd_config.json` 的 `admins_id` |
+
+**最小可用**：只要 1 + 2（5 分钟）——聊天、画画、课表、提醒、表情包都能用。
+**完整功能**：再加 3 + 4 + 5 + 6。
+
+---
 ## 快速开始
 
 ### 前置
