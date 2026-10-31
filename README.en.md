@@ -15,6 +15,8 @@
   <img src="https://img.shields.io/badge/python-3.12-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/node-20-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node">
   <img src="https://img.shields.io/badge/AstrBot-4.29-4D6BFE?style=flat-square" alt="AstrBot">
+  <a href="https://github.com/Flechazo-91/bluefish-qq-bot/releases/latest"><img src="https://img.shields.io/github/v/release/Flechazo-91/bluefish-qq-bot?style=flat-square&label=release" alt="Release"></a>
+  <a href="https://github.com/Flechazo-91/bluefish-qq-bot/releases"><img src="https://img.shields.io/github/downloads/Flechazo-91/bluefish-qq-bot/total?style=flat-square&label=downloads" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/license-MIT-2EA44F?style=flat-square" alt="License">
 </p>
 
@@ -25,6 +27,8 @@
 
 ---
 
+> **Skip the setup:** download the offline bundle — **[BlueFish-Pack-v1.2.zip (452 MB)](https://github.com/Flechazo-91/bluefish-qq-bot/releases/latest)**
+> Unzip → run `一键安装.bat` → enter your QQ number and DeepSeek key → click start. No Python / Node / AstrBot installation needed.
 ## Screenshots
 
 <p align="center">
