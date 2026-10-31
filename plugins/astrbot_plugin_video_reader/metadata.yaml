@@ -1,0 +1,11 @@
+name: video_reader
+display_name: 私聊视频解读
+short_desc: 好友发来视频 → 抽关键帧让视觉模型读，再据此回复
+desc: >-
+  只处理私聊、≤3 分钟的视频。收到视频后抽九宫格关键帧交给 qwen3-vl 描述画面，
+  并把音轨交给本地 whisper 转写；两段结果作为「你刚看过这段视频」的上下文注入本轮对话，
+  模型据此自然回复。
+help: 无需指令，发视频即可。
+version: 1.0.0
+author: local
+astrbot_version: ">=4.17.0"
