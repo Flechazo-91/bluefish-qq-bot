@@ -11,6 +11,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Flechazo-91/bluefish-qq-bot/actions/workflows/check.yml"><img src="https://github.com/Flechazo-91/bluefish-qq-bot/actions/workflows/check.yml/badge.svg" alt="checks"></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-4493F8?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/python-3.12-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/node-20-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node">
