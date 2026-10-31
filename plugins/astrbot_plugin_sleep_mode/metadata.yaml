@@ -1,0 +1,11 @@
+name: sleep_mode
+display_name: 睡眠模式
+short_desc: 夜里（默认 00:00–08:00）有人找她时先回「睡觉中」，并记账等早上再回
+desc: >-
+  机器按作息待机/关机时，有人发消息就先安抚一句「大肥鱼睡觉中，等他起了就回复你」，
+  消息记到 sleep-pending.jsonl；早上 08:00 由 morning.mjs 统一补一句「我醒了」。
+  配置在 D:/AstrBot\sleep-config.json（时段/文案/冷却时间都能改）。
+help: 无需指令。
+version: 1.0.0
+author: local
+astrbot_version: ">=4.17.0"
