@@ -46,6 +46,24 @@
 
 ---
 
+## 截图
+
+<p align="center">
+  <img src="docs/images/console-check.png" alt="环境自检：11 项检查" width="49%">
+  <img src="docs/images/console-status.png" alt="一键启动与 6 个服务状态" width="49%">
+</p>
+
+<p align="center">
+  <img src="docs/images/console-config.png" alt="账号与认证配置" width="49%">
+  <img src="docs/images/cli-demo.png" alt="命令行：启动、语法检查、TTS、唱歌" width="49%">
+</p>
+
+<p align="center"><sub>截图来自演示实例（QQ 号 / API Key / Cookie 均为假数据）</sub></p>
+
+---
+
+---
+
 ## 功能
 
 ### 🎤 唱歌（核心特色）
