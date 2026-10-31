@@ -164,6 +164,25 @@ flowchart TD
 
 ---
 
+## What you need to provide
+
+> Full checklist (how to obtain each credential, where to put it, expiry): **[docs/SETUP.md](docs/SETUP.md)** (Chinese)
+
+| # | Requirement | Required? | How to get it | Where to put it |
+|---|---|---|---|---|
+| 1 | **Secondary QQ account** (+ phone) | ✅ yes | Register a new account; never use your main one | Console → Account tab |
+| 2 | **DeepSeek API key** | ✅ yes | [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys), copy `sk-...` | Same tab |
+| 3 | **NetEase cookie** | ⬜ music/singing only | Sign in to music.163.com → DevTools → Cookies → `MUSIC_U`, `__csrf` | Same tab |
+| 4 | **Voice models** (GPT-SoVITS + Seed-VC, 13 GB) | ⬜ voice/singing only | Place in `Models/GPT-SoVITS/`, `Models/seed-vc/` | See SETUP.md |
+| 5 | **NVIDIA GPU** (6 GB+) | ⬜ voice/singing only | Without it, voice degrades to text | — |
+| 6 | **Douyin account** (QR scan) | ⬜ Douyin automation only | Scan with the **Douyin app**, not a generic camera | On first run |
+| 7 | **Target QQ / group ids** | ⬜ reminders/timetable only | Fill recipients and group id | `timetable.json`, `checkin-remind.mjs` |
+| 8 | **Admin QQ** | ⬜ slash commands only | Your own or trusted accounts | `cmd_config.json` → `admins_id` |
+
+**Minimum**: items 1 + 2 (5 minutes) — chat, drawing, timetable, reminders, stickers all work.
+**Full**: add 3 + 4 + 5 + 6.
+
+---
 ## Quick start
 
 ### Requirements
