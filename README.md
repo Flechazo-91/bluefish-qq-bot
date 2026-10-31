@@ -63,6 +63,13 @@
 </p>
 
 <p align="center"><sub>截图来自演示实例（QQ 号 / API Key / Cookie 均为假数据）</sub></p>
+<p align="center">
+  <img src="docs/images/chat-reminder.png" alt="QQ 私聊：课前提醒 + 抖音巡航小结 + 文件发送" width="31%">
+  <img src="docs/images/qzone-post.png" alt="QQ 空间：她自己发的说说" width="31%">
+</p>
+
+<p align="center"><sub>左：课前 12 分钟提醒（按真实课表算）+ 抖音巡航小结 + 直接发文件　右：她自己发在 QQ 空间的说说</sub></p>
+
 
 ---
 
