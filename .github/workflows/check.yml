@@ -1,0 +1,51 @@
+name: checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python syntax (all .py)
+        run: |
+          python -m compileall -q plugins launcher/app.py {} 2>/dev/null || true
+          python - <<'PY'
+          import compileall, sys, pathlib
+          ok = True
+          for p in pathlib.Path('.').rglob('*.py'):
+              if compileall.compile_file(str(p), quiet=2) is False:
+                  print('FAIL', p); ok = False
+          sys.exit(0 if ok else 1)
+          PY
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Node syntax (all .mjs)
+        run: |
+          fail=0
+          for f in $(find . -name '*.mjs'); do
+            node --check "$f" || { echo "FAIL $f"; fail=1; }
+          done
+          exit $fail
+
+      - name: Guard against leaked secrets
+        run: |
+          if grep -rInE 'sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|MUSIC_U=[A-Za-z0-9]{20,}' \
+               --include='*.py' --include='*.mjs' --include='*.json' --include='*.md' .; then
+            echo "::error::possible secret found"; exit 1
+          fi
+          echo "no secrets found"
