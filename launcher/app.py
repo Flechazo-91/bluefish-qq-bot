@@ -35,6 +35,7 @@ def _resolve_home(name: str, fallback: str, profile: dict | None = None) -> str:
         cands.append(profile.get(name.lower() + "_home") or "")
     cands += [
         os.path.join(ROOT, name),
+        os.path.join(os.path.dirname(ROOT), name),
         fallback,
         os.path.join(os.path.expanduser("~"), name),
     ]
@@ -44,8 +45,8 @@ def _resolve_home(name: str, fallback: str, profile: dict | None = None) -> str:
     return os.path.join(ROOT, name)
 
 
-ASTRBOT_HOME = _resolve_home("AstrBot", r"D:/AstrBot")
-SNOWLUMA_HOME = _resolve_home("SnowLuma", r"D:/SnowLuma")
+ASTRBOT_HOME = _resolve_home("AstrBot", r"D:\AstrBot")
+SNOWLUMA_HOME = _resolve_home("SnowLuma", r"D:\SnowLuma")
 
 DEFAULTS = {
     "qq": "",
@@ -188,6 +189,7 @@ class App(tk.Tk):
         self._build_style()
         self._build_ui()
         self.after(300, self.refresh_status)
+        self.after(600, self.refresh_checks)   # 打开就自动跑一次自检
 
     # ---- 样式
     def _build_style(self) -> None:
@@ -204,6 +206,10 @@ class App(tk.Tk):
         st.configure("Dim.TLabel", background=C["bg"], foreground=C["dim"])
         st.configure("Title.TLabel", background=C["bg"], foreground=C["accent"],
                      font=("Microsoft YaHei UI", 16, "bold"))
+        # 输入框：深色底 + 浅色字（默认 ttk 是白底，浅色字会看不见）
+        st.configure("TEntry", fieldbackground="#0b1219", foreground=C["ink"],
+                     insertcolor=C["ink"], bordercolor=C["accent"], lightcolor=C["accent"], darkcolor=C["accent"])
+        st.map("TEntry", fieldbackground=[("readonly", "#0b1219")], foreground=[("disabled", C["dim"])])
         st.configure("TButton", padding=(12, 6))
         st.configure("Accent.TButton", background=C["accent"], foreground="#06121c", padding=(14, 7))
         st.configure("TNotebook", background=C["bg"], borderwidth=0)
@@ -221,6 +227,7 @@ class App(tk.Tk):
         self.lbl_clock.pack(side="right")
 
         nb = ttk.Notebook(self)
+        self.nb = nb
         nb.pack(fill="both", expand=True, padx=14, pady=8)
 
         self.tab_check = ttk.Frame(nb)
@@ -489,7 +496,19 @@ def selftest() -> int:
 def main() -> None:
     if "--selftest" in sys.argv:
         raise SystemExit(selftest())
-    App().mainloop()
+    tab = 0
+    for i, a in enumerate(sys.argv):
+        if a == "--tab" and i + 1 < len(sys.argv):
+            try:
+                tab = int(sys.argv[i + 1])
+            except ValueError:
+                tab = 0
+    app = App()
+    try:
+        app.nb.select(tab)
+    except Exception:
+        pass
+    app.mainloop()
 
 
 if __name__ == "__main__":
