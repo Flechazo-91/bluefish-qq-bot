@@ -1,0 +1,10 @@
+name: music
+display_name: 点歌
+short_desc: 说「点歌 晴天」回一段 40 秒试听
+desc: >-
+  私聊或群里 @她 说「点歌 <歌名>」，搜网易云 → 取直链 → ffmpeg 切 40 秒片段 → 作为语音发回。
+  每人每天 8 首、全局 40 首；会员曲/下架曲会直说拿不到，不放半首歌。
+help: 用法：点歌 晴天；来一首 周杰伦；放首歌 稻香
+version: 1.1.0
+author: local
+astrbot_version: ">=4.17.0"
