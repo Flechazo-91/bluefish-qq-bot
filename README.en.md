@@ -42,6 +42,13 @@
 </p>
 
 <p align="center"><sub>From a demo instance — QQ number, API key and cookie are fake.</sub></p>
+<p align="center">
+  <img src="docs/images/chat-reminder.png" alt="QQ DM: pre-class reminder, Douyin session summary, file delivery" width="31%">
+  <img src="docs/images/qzone-post.png" alt="QZone: a post she published herself" width="31%">
+</p>
+
+<p align="center"><sub>Left: 12-minute pre-class reminder (computed from the real timetable) + Douyin session summary + file delivery　Right: a QZone post she wrote and published on her own</sub></p>
+
 
 ---
 
