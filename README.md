@@ -20,7 +20,7 @@
 
 <p align="center"><sub>
   第三方 QQ 客户端桥接属灰色地带：本项目仅用于个人学习自用，请使用小号并遵守平台规则。<br>
-  中文 · <a href="#简介">简介</a> · <a href="#快速开始">快速开始</a> · <a href="#功能">功能</a> · <a href="#架构">架构</a>
+  中文 · <a href="README.en.md">English</a> · <a href="#简介">简介</a> · <a href="#快速开始">快速开始</a> · <a href="#功能">功能</a> · <a href="#架构">架构</a>
 </sub></p>
 
 ---
